@@ -1,6 +1,6 @@
 # hello_app — example for CodeShield
 
-A minimal Python program that exposes a `secret_algorithm` function. It
+A minimal Python program that exposes a `proprietary_mix` function. It
 serves as a target for demonstrating the full protection pipeline.
 
 ## Run it directly

@@ -17,7 +17,7 @@ import sys
 from pathlib import Path
 
 
-def secret_algorithm(x: int) -> int:
+def proprietary_mix(x: int) -> int:
     """Stand-in for the proprietary logic the client wants to protect."""
     # Trivial here so the example stays small; in real use this would be
     # the algorithm whose source you don't want shipped in cleartext.
@@ -28,7 +28,7 @@ def main(argv: list[str] | None = None) -> int:
     args = list(sys.argv[1:] if argv is None else argv)
     value = int(args[0]) if args else 42
     print(f"Hello from {Path(__file__).name}")
-    print(f"secret_algorithm({value}) = {secret_algorithm(value)}")
+    print(f"proprietary_mix({value}) = {proprietary_mix(value)}")
     return 0
 
 
