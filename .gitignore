@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+build/
+dist/
+*.spec
+
+# Virtualenv
+.venv/
+venv/
+env/
+
+# Test / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+
+# PyArmor / PyInstaller output
+pyarmor_runtime_*/
+.pyarmor/
+obfuscated/
+packaged/
+
+# Editor
+.vscode/
+.idea/
+*.swp
+.DS_Store

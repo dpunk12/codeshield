@@ -1,0 +1,48 @@
+[build-system]
+requires = ["setuptools>=64", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "codeshield"
+version = "0.1.0"
+description = "Python IP protection pipeline: obfuscation (PyArmor), packaging (PyInstaller), and anti-tamper integrity verification."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+authors = [{ name = "CodeShield Contributors" }]
+keywords = ["obfuscation", "pyarmor", "pyinstaller", "packaging", "intellectual-property"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3 :: Only",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Security",
+]
+
+# Note: PyArmor and PyInstaller are invoked as separate command-line tools.
+# They are listed here so a single `pip install codeshield` brings the full
+# pipeline. If you want to use only `verify` at runtime on an end-user
+# machine, install with `pip install codeshield --no-deps` instead.
+dependencies = [
+    "pyarmor>=8.5,<10",
+    "pyinstaller>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7",
+    "pytest-cov>=4",
+]
+
+[project.scripts]
+codeshield = "codeshield.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
